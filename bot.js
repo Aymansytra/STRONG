@@ -78,6 +78,18 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+    if (message.content === '!') {
+        message.reply('**Wlcome To KND CLAN :tada: :champagne_glass: **');
+      }
+});
+
+client.on('message', message => {
+    if (message.content === 'ولف') {
+        message.reply('**آطلق وآحد بـ آلسيرفر كلهه:heart_eyes:**');
+      }
+});
+
+client.on('message', message => {
     if (message.content.startsWith(prefix + 'clear')) {
       if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ماعندك هذا البرمشن[*MANAGE_MESSAGES*] `).catch(console.error);
   message.delete()
