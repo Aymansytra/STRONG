@@ -10,6 +10,13 @@ client.on('message', message => {
     if (message.content === 'سيطره') {
         message.reply('عيووووووونه');
       }
+	
+	client.on('message', message => {
+    if (message.content === 'الشعار') {
+        message.reply('** الشعار في الدسكورد !KND
+الشعار في آقاريو 
+knd**');
+      }
 });
 
 const Sra7a = [
