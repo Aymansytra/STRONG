@@ -35,9 +35,5 @@ client.on('message', message => {
     if (message.content === 'التاق') {
         message.reply('** Ӄᴎ∂⍣㦵 | الشعار في آقاريو   || ! KND , | آلشعار في الديسكورد **');
       }
-            
-            
-            
-    });
-
-client.login(process.env.BOT_TOKEN);  
+          });
+client.login(process.env.BOT_TOKEN);
