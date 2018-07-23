@@ -58,5 +58,3 @@ client.on('message', message => {
         message.reply('** Ӄᴎ∂⍣㦵 | الشعار في آقاريو   || ! KND , | آلشعار في الديسكورد **');
  
 client.login(process.env.BOT_TOKEN);
-      
-});
