@@ -79,7 +79,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content === '!') {
-        message.reply('**Wlcome To KND CLAN :tada: :champagne_glass: **');
+        message.reply('**Welcome To KND CLAN :tada: :champagne_glass: **');
       }
 });
 
@@ -448,27 +448,5 @@ client.on('message', message => {
     }
     });
     
-client.on('message', message => {
-   let embed = new Discord.RichEmbed()
-
-    let args = message.content.split(' ').slice(1).join(' ');
-     if(!message.channel.guild) return;
-if(message.content.split(' ')[0] == '-bc') {
-         message.react("✔️")
-          let embed = new Discord.RichEmbed()
-    .setColor("#FF00FF")
-    .setThumbnail(message.author.avatarURL)   
-                                      .addField('تم الارسال بواسطة :', "<@" + message.author.id + ">")
-                 message.channel.sendEmbed(embed);
-        message.guild.members.forEach(m => {
-            var bc = new Discord.RichEmbed()
-.addField('**● Sender  :**', `*** → ${message.author.username}#${message.author.discriminator}***`)
-            .addField('***● Server  :***', `*** → ${message.guild.name}***`)               
-    .setColor('#ff0000')
-                 .addField('ّ', args)
-            m.send(``,{embed: bc});
-        });
-    }
-
 
 client.login(process.env.BOT_TOKEN);
