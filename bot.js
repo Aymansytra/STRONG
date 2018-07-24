@@ -41,7 +41,7 @@ client.on('message', message => {
 });
         
         client.on('message', message => {
-    if (message.content === 'السلام عليك') {
+    if (message.content === 'السلام عليكم') {
         message.reply('**وعڵيڪم ٱڵسڵٱم ورحمهہ ٱڵڵهہ وبرڪٱتهہ**');
       }
 });
@@ -257,7 +257,7 @@ client.on("message", message => {
 
    client.on('message', message => {
      if (message.content === "-help") {
-message.author.send(`  **
+message.reply(`  **
 __ ● ▬▬▬▬▬▬▬▬▬KINGS NEVER DIE CLAN▬▬▬▬▬▬▬▬▬ ● __
 -Mute ----> للميوت
 -unmute ----> لـ فك الميوت
@@ -480,8 +480,122 @@ client.on("message", message => {
 });
 
 
-
+ const dot = new Discord.Client();
+client.on('message', message => {
     
+    if (message.content === "emoji") {
+        setInterval(function(){
+        message.edit('😂') 
+        message.edit('🙉')   
+        message.edit('🔥')
+        message.edit('😠')
+        message.edit('🔥 🌶')
+        message.edit('🙃')
+        message.edit('☠')
+        message.edit('✨')
+        message.edit('😐')
+        message.edit('😍')
+        message.edit('❤')
+        message.edit('👌:skin-tone-2:')
+        message.edit('🌚')
+        message.edit('🌹')
+        message.edit('😒')
+        message.edit('🐸')
+        message.edit('🍉')
+        message.edit('🚨')
+        message.edit('😱')
+        message.edit('😡')        
+        message.edit('🤑')
+        message.edit('😖')
+        message.edit('😚')
+        message.edit('🕊')
+        message.edit('☄')
+           message.edit('🐶')
+        message.edit('🚜')    
+        message.edit('🍫')
+        message.edit('👇:skin-tone-2:')
+        message.edit('🕹')
+        message.edit('🌌 ')
+        message.edit('💋 ')
+           message.edit('🤸')
+        message.edit('🙍:skin-tone-2:')    
+        message.edit('😦')
+        message.edit('👈:skin-tone-2:')
+        message.edit('💓')
+        message.edit('☺')
+        message.edit('💗')
+        message.edit('🌸')
+
+
+        
+        
+        }, 1000)
+    }
+
+  
+  client.on('guildMemberAdd', (member) => {
+let channel = client.channels.get('ايدي الروم اللي يرسل فيها')
+if(member.user.bot) {
+channel.send(`${member} ولكم يا عمو البوت`)
+}
+})
+  
+  client.on('message', message => {
+        var  user = message.mentions.users.first() || message.author;
+    if (message.content.startsWith("-avatar")) {
+message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
+}
+});
+  
+  
+  client.on('message', message => {//By Codes , ' ّEpicEdiTeDّ#4968
+              if(!message.channel.guild) return;//By Codes , ' ّEpicEdiTeDّ#4968
+    var prefix = "$";//By Codes , ' ّEpicEdiTeDّ#4968
+    if(message.content.startsWith('-bc')) {//By Codes , ' ّEpicEdiTeDّ#4968
+    if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للإدارة**').then(m => m.delete(5000));//By Codes , ' ّEpicEdiTeDّ#4968
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية لاستعمال هاذا الأمر** //By Codes , ' ّEpicEdiTeDّ#4968`ADMINISTRATOR`' );//By Codes , ' ّEpicEdiTeDّ#4968
+    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);//By Codes , ' ّEpicEdiTeDّ#4968
+    let copy = "S Bot";//By Codes , ' ّEpicEdiTeDّ#4968
+    let request = `Requested By ${message.author.username}`;//By Codes , ' ّEpicEdiTeDّ#4968
+    if (!args) return message.reply('**يجب عليك كتابة شيئ لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من الإرسال؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {//By Codes , ' ّEpicEdiTeDّ#4968
+    msg.react('✅')//By Codes , ' ّEpicEdiTeDّ#4968
+    .then(() => msg.react('❌'))//By Codes , ' ّEpicEdiTeDّ#4968
+    .then(() =>msg.react('✅'))//By Codes , ' ّEpicEdiTeDّ#4968
+ 
+    let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;//By Codes , ' ّEpicEdiTeDّ#4968
+    let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;//By Codes , ' ّEpicEdiTeDّ#4968
+          let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });//By Codes , ' ّEpicEdiTeDّ#4968
+    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });//By Codes , ' ّEpicEdiTeDّ#4968
+    reaction1.on("collect", r => {//By Codes , ' ّEpicEdiTeDّ#4968
+    message.channel.send(`**☑ |   لقد تم ارسال الرسالة لـ ${message.guild.members.size} عضوآ**`).then(m => m.delete(5000));//By Codes , ' ّEpicEdiTeDّ#4968
+    message.guild.members.forEach(m => {//By Codes , ' ّEpicEdiTeDّ#4968
+    var bc = new//By Codes , ' ّEpicEdiTeDّ#4968
+       Discord.RichEmbed()//By Codes , ' ّEpicEdiTeDّ#4968
+       .setColor('RANDOM')//By Codes , ' ّEpicEdiTeDّ#4968
+       .setDescription(`البرودكاست :mega:
+**:shield: السيرفر : ** ${message.guild.name}
+** :thinking:  المرسل : ** ${message.author.username}
+**  الرسالة : ** ${args}
+ 
+ 
+ 
+ 
+        `)//By Codes , ' ّEpicEdiTeDّ#4968
+         .setTimestamp()//By Codes , ' ّEpicEdiTeDّ#4968
+         .setFooter('S Bot' , 'https://cdn.discordapp.com/avatars/465885551329804288/55614337cfb9813916a60383469736d9.jpg?size=128')
+    m.send({ embed: bc })
+    msg.delete();//By Codes , ' ّEpicEdiTeDّ#4968
+    })//By Codes , ' ّEpicEdiTeDّ#4968
+    })//By Codes , ' ّEpicEdiTeDّ#4968
+    reaction2.on("collect", r => {//By Codes , ' ّEpicEdiTeDّ#4968
+    message.channel.send(`**تم الغاء البرودكاست :x:.**`).then(m => m.delete(5000));//By Codes , ' ّEpicEdiTeDّ#4968//By Codes , msg.delete();//By Codes , ' ّEpicEdiTeDّ#496
+    })
+    })//By Codes , ' ّEpicEdiTeDّ#4968
+    }
+    });//By Codes , ' ّEpicEdiTeDّ#4968//By Codes , ' ّEpicEdiTeDّ#4968
+ 
+//By Codes , ' ّEpicEdiTeDّ#4968  
+  
  client.on('message',async message => {
 if(message.content === 'unbanall') {
 message.guild.fetchBans().then(ba => {
@@ -492,4 +606,51 @@ message.guild.unban(ns);
 }
 });
 
+  
+   client.on('message', message => {
+          
+
+           if (message.content.startsWith(prefix + "user")) {
+                     if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات ❌`);
+
+                message.guild.fetchInvites().then(invs => {
+      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
+      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+      var moment = require('moment');
+      var args = message.content.split(" ").slice(1);
+let user = message.mentions.users.first();
+var men = message.mentions.users.first();
+ var heg;
+ if(men) {
+     heg = men
+ } else {
+     heg = message.author
+ }
+var mentionned = message.mentions.members.first();
+  var h;
+ if(mentionned) {
+     h = mentionned
+ } else {
+     h = message.member
+ }
+        moment.locale('ar-TN');
+      var id = new  Discord.RichEmbed()
+       
+    .setColor("#0a0909")
+ .setThumbnail(message.author.avatarURL)
+.addField(': تاريخ دخولك للديسكورد',` \`${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} \`**\n ${moment(heg.createdTimestamp).fromNow()}**` ,true) 
+.addField(': تاريخ دخولك لسيرفرنا', `\`${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')}  \` **\n ${moment(h.joinedAt).fromNow()} **`, true)
+
+.setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')  
+    message.channel.sendEmbed(id);
+})
+}
+    
+
+         
+     });
+  
+ 
+  
 client.login(process.env.BOT_TOKEN);
