@@ -534,7 +534,7 @@ client.on('message', message => {
 
   
   client.on('guildMemberAdd', (member) => {
-let channel = client.channels.get('ايدي الروم اللي يرسل فيها')
+let channel = client.channels.get('470512777568583691')
 if(member.user.bot) {
 channel.send(`${member} ولكم يا عمو البوت`)
 }
