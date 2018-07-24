@@ -611,11 +611,6 @@ var mentionned = message.mentions.members.first();
     message.channel.sendEmbed(id);
 })
 }
-    
-
-         
      });
-  
- 
   
 client.login(process.env.BOT_TOKEN);
