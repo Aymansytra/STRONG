@@ -525,10 +525,7 @@ client.on('message', message => {
         message.edit('☺')
         message.edit('💗')
         message.edit('🌸')
-
-
-        
-        
+          
         }, 1000)
     }
 
