@@ -4,7 +4,7 @@ const prefix = '-'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`KINGS NEVER DIE`,"http://twitch.tv/sytra_ayman")
+client.user.setGame(`NEVER FORGET`,"http://twitch.tv/sytra_ayman")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -576,6 +576,13 @@ client.on("message", message => {
 });
 
 
+client.on('voiceStateUpdate', (old, now) => {
+  const channel = client.channels.get('471984309797126145');
+  const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
+  const size = channel.name.match(/\[\s(\d+)\s\]/);
+  if (!size) return channel.setName(`Voice Online: ${currentSize}`);
+  if (currentSize !== size) channel.setName(`Voice Online: ${currentSize}`);
+});
 
   
   client.on('guildMemberAdd', (member) => {
