@@ -36,7 +36,7 @@ client.on('message', message => {
     
     client.on('message', message => {
     if (message.content === 'الشعار') {
-        message.reply('** Ӄᴎ∂⍣㦵 | الشعار في آقاريو   || ! KND , | آلشعار في الديسكورد **');
+        message.reply('** ๖ۣۜ𝓝𝓕༻ | الشعار في آقاريو   || ! NF , | آلشعار في الديسكورد **');
       }
 });
         
@@ -73,7 +73,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content === '!') {
-        message.reply('**Welcome To KND CLAN :tada: :champagne_glass: **');
+        message.reply('**Welcome To NF CLAN :tada: :champagne_glass: **');
       }
 });
 
@@ -84,12 +84,11 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
+ client.on('message', message => {
     if (message.content === 'التاق') {
-        message.reply('** Ӄᴎ∂⍣㦵 | الشعار في آقاريو   || ! KND , | آلشعار في الديسكورد **');
+        message.reply('** ๖ۣۜ𝓝𝓕༻ | الشعار في آقاريو   || ! NF , | آلشعار في الديسكورد **');
       }
 });
-
 
 
 client.on('message', message => {
@@ -158,10 +157,10 @@ client.channels.find('id', '470605642302881812').setName("Welcom");
 client.channels.find('id', '470605642302881812').setName("Welcome");
 client.channels.find('id', '470605642302881812').setName("Welcome T");
 client.channels.find('id', '470605642302881812').setName("Welcome To");
-client.channels.find('id', '470605642302881812').setName("Welcome To K");
-client.channels.find('id', '470605642302881812').setName("Welcome To KN");
-client.channels.find('id', '470605642302881812').setName("Welcome To KND");
-client.channels.find('id', '470605642302881812').setName("Welcome To KND ✨");
+client.channels.find('id', '470605642302881812').setName("Welcome To N");
+client.channels.find('id', '470605642302881812').setName("Welcome To NF");
+client.channels.find('id', '470605642302881812').setName("Welcome To NF ");
+client.channels.find('id', '470605642302881812').setName("Welcome To NF ✨");
   }, 3000);
 });
 
