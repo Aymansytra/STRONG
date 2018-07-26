@@ -85,18 +85,10 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     if (message.content === "الشعار") {
-message.reply(`  **__الشعآر في الديسكورد__:  **
-
-``! KND | آسمك``
-
-** __الشعآر في اللعبة__:**
-
-``Ӄᴎ∂⍣㦵 | آسمك`` 
-~ `);
-    }
+    if (message.content === 'التاق') {
+        message.reply('** Ӄᴎ∂⍣㦵 | الشعار في آقاريو   || ! KND , | آلشعار في الديسكورد **');
+      }
 });
-
 
 
 
