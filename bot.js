@@ -143,6 +143,24 @@ const moment = require('moment');
     message.channel.send(id)
 }       });
  
+ 
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '470605642302881812').setName("W");
+client.channels.find('id', '470605642302881812').setName("We");
+client.channels.find('id', '470605642302881812').setName("Wel");
+client.channels.find('id', '470605642302881812').setName("Welc");
+client.channels.find('id', '470605642302881812').setName("Welco");
+client.channels.find('id', '470605642302881812').setName("Welcom");
+client.channels.find('id', '470605642302881812').setName("Welcome");
+client.channels.find('id', '470605642302881812').setName("Welcome T");
+client.channels.find('id', '470605642302881812').setName("Welcome To");
+client.channels.find('id', '470605642302881812').setName("Welcome To K");
+client.channels.find('id', '470605642302881812').setName("Welcome To KN");
+client.channels.find('id', '470605642302881812').setName("Welcome To KND");
+client.channels.find('id', '470605642302881812').setName("Welcome To KND ✨");
+  }, 3000);
+});
 
 
 client.on('message', message => {
