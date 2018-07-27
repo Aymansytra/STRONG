@@ -1014,17 +1014,18 @@ message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 }
 });
   
-  client.on('message', msg =>{
-    let message=msg;
-    if(message.content.startsWith("-bc")){
-        var args = message.content.split(' ').slice(1).join(' ');
-    msg.guild.members.forEach(m=>{
-        m.send(args.replace(/[user]/g,m)).catch();
-    if(message.attachments.first()){
-m.sendFile(message.attachments.first().url).catch();
-    }
-    })    ;
-    }
+  client.on("message", message => {
+
+            if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
+};     
 });
   
   
