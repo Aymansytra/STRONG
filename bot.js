@@ -702,7 +702,6 @@ reaction3.on("collect", r => {
 }
 });
 
-var prefix = "-";
 
 client.on('message', message => {
   if (message.author.bot) return;
