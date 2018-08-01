@@ -90,37 +90,6 @@ client.on('message', message => {
       }
 });
 
-
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'ce')) {
-      if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ماعندك هذا البرمشن[*MANAGE_MESSAGES*] `).catch(console.error);
-  message.delete()
-  if(!message.channel.guild) return;
-  let args = message.content.split(" ").slice(1);
-  
-  const messagecount = parseInt(args.join(' '));
-  
-  message.channel.fetchMessages({
-  
-  limit: messagecount
-  
-  }).then(messages => message.channel.bulkDelete(messages));
-  message.channel.sendMessage("", {embed: {
-    title: "``✏️✅ تــم مسح الشات ``",
-    color: 0x06DF00,
-    footer: {
-    
-    }
-    }}).then(msg => {msg.delete(3000)});
-  };
-  
-  });
-
-
-
- 
- 
-
 client.on('message', message => {
     if (message.content.startsWith("رابط")) {
         message.channel.createInvite({
@@ -163,51 +132,6 @@ client.on('message', message => {
      modlog2.send({embed:heroo}); 
 });
 
-
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`:crown: WELCOME TO NF CLAN :
-${member}:crown: `) 
-}).catch(console.error)
-})
-
-
-
-
- 
- 
-  if (command === "-unmute") {
-          if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');        
-        if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
-  let user = message.mentions.users.first();
-  let modlog2 = client.channels.find('name', 'logs');
-  let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
-  if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **");
-  if (!modlog2) return message.reply("**لا يوجد الروم المراد ارسال المعلومات له 'Mute-Log'**");
-  if (message.mentions.users.size < 1) return message.reply('** يجب عليك المنشن اولاً **');
-  const embed = new Discord.RichEmbed()
-    .setColor(0x00AE86)
-    .addField('UnMute ', ' | :white_check_mark: |')
-    .addField('Unmuted', `${user.username}#${user.discriminator} `)
-    .addField('By:', `${message.author.username}#${message.author.discriminator}`)
-   message.channel.send({embed: embed});
- 
-  if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('** لا يوجد لدي برمشن Manage Roles **');
- 
-  if (message.guild.member(user).removeRole(muteRole.id)) {
-      client.channels.get(modlog2.id).send({embed});
-  } else {
-    message.guild.member(user).removeRole(muteRole).then(() => {
-      client.channels.get(modlog2.id).send({embed});
-    });
-  }
- 
-};
- 
-});
- 
-
-
 client.on('message', message => {
 var prefix = "-";
  
@@ -216,39 +140,36 @@ var prefix = "-";
   var argresult = args.join(' ');
   if (message.author.id == '395462979115679755' ) return;
  
-if (message.content.startsWith(prefix + 'playing')) {
+if (message.content.startsWith(prefix + 'setplay')) {
   client.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult}** : تم تغيير الحالة`)
 } else
  
-if (message.content.startsWith(prefix + 'stream')) {
+if (message.content.startsWith(prefix + 'setstream')) {
   client.user.setGame(argresult, "https://www.twitch.tv/sytra_ayman");
     message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
 } else
  
-if (message.content.startsWith(prefix + 'watch')) {
+if (message.content.startsWith(prefix + 'setwatch')) {
 client.user.setActivity(argresult, {type:'WATCHING'});
     message.channel.sendMessage(`**:white_check_mark:  : ${argresult}**`)
 } else 
-if (message.content.startsWith(prefix + 'listg')) {
+if (message.content.startsWith(prefix + 'setlisten')) {
 client.user.setActivity(argresult, {type:'LISTENING'});
     message.channel.sendMessage(`**:white_check_mark:  : ${argresult}**`)
 } else 
 
-if (message.content.startsWith(prefix + 'name')) {
+if (message.content.startsWith(prefix + 'setname')) {
   client.user.setUsername(argresult).then
       message.channel.sendMessage(`**${argresult}** : تم تغير الأسم`)
   return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
 } else
 
-if (message.content.startsWith(prefix + 'pic')) {
+if (message.content.startsWith(prefix + 'setimg')) {
   client.user.setAvatar(argresult);
     message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
 }
 });
-
-
-
 
 client.on('message', function(msg) {
          var prefix = "-"
@@ -267,7 +188,6 @@ client.on('message', function(msg) {
     }
   });
  
-
 client.on('message', message => {
     if (message.content.startsWith("-hack")) {
         if(!message.author.id === '') return;
@@ -370,9 +290,6 @@ client.on('message', message => {
            });
          }
  })
-
-
-
 
 const Sra7a = [
      'صراحه  |  صوتك حلوة؟',
@@ -746,8 +663,6 @@ const kingmas = [
   }
 });
 
-
-
 client.on("message", function(message) {
    if(message.content.startsWith(prefix + "rps")) {
     let messageArgs = message.content.split(" ").slice(1).join(" ");
@@ -877,9 +792,5 @@ message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
  message.delete(); 
 };     
 });
-  
- 
 
-  
-   
 client.login(process.env.BOT_TOKEN);
