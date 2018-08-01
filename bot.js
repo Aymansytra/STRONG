@@ -92,7 +92,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith(prefix + 'clear')) {
+    if (message.content.startsWith(prefix + 'ce')) {
       if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ماعندك هذا البرمشن[*MANAGE_MESSAGES*] `).catch(console.error);
   message.delete()
   if(!message.channel.guild) return;
@@ -117,33 +117,7 @@ client.on('message', message => {
   });
 
 
-const moment = require('moment');
-             client.on('message', message => {
-           if (message.content.startsWith(prefix + "id")) {
-     var args = message.content.split(" ").slice(1);
-     let user = message.mentions.users.first();
-     var men = message.mentions.users.first();
-        var heg;
-        if(men) {
-            heg = men
-        } else {
-            heg = message.author
-        }
-      var mentionned = message.mentions.members.first();
-         var h;
-        if(mentionned) {
-            h = mentionned
-        } else {
-            h = message.member
-        }
-               moment.locale('ar-TN');
-      var id = new  Discord.RichEmbed()
-    .setColor("RANDOM")
-    .addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)
-    .addField(': دخولك لديسكورد قبل', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true)
-    .setThumbnail(heg.avatarURL);
-    message.channel.send(id)
-}       });
+
  
  
 
@@ -190,35 +164,16 @@ client.on('message', message => {
 });
 
 
-client.on("message", message => {
-  let command = message.content.split(" ")[0];
-  if (command === "-mute") {
-          if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');
-                  if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
-  let user = message.mentions.users.first();
-  let modlog1 = client.channels.find('name', 'logs');
-  let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
-  if (!modlog1) return message.reply("** يوجد الروم المراد ارسال المعلومات له 'Mute-Log'**");
-  if (message.mentions.users.size < 1) return message.reply('** يجب عليك المنشن اولاً **');
-  const embed = new Discord.RichEmbed()
-    .setColor(720505)
-    .addField('Mute', ' | :white_check_mark: |')
-    .addField('Muted', `${user.username}#${user.discriminator} `)
-    .addField('By:', `${message.author.username}#${message.author.discriminator}`)
-   message.channel.send({embed: embed});
- 
-  if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
- 
-  if (message.guild.member(user).roles.has(muteRole.id)) {
-      client.channels.get(modlog1.id).send({embed}).catch(console.error);
-  } else {
-    message.guild.member(user).addRole(muteRole).then(() => {
-      client.channels.get(modlog1.id).send({embed}).catch(console.error);
-    });
-  }
- 
-};
- 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:crown: WELCOME TO NF CLAN :
+${member}:crown: `) 
+}).catch(console.error)
+})
+
+
+
+
  
  
   if (command === "-unmute") {
@@ -507,6 +462,32 @@ client.on('message', message => {
            });
          }
  })
+
+
+var prefix = "-";
+
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+  
+ 
+
+if (command == "say1") {
+    let say = new Discord.RichEmbed()
+    .setDescription(args.join("  "))
+    .setColor(0x23b2d6)
+    message.channel.sendEmbed(say);
+    message.delete();
+  }
+
+
+});
+
 
 
 const Sra7a = [
@@ -882,6 +863,40 @@ const kingmas = [
 });
 
 
+client.on('message', message => {
+    if(message.channel.type === "dm") return;
+      if(message.content.startsWith ("-marry")) {
+      if(!message.channel.guild) return message.reply(' This command only for servers ')
+      var proposed = message.mentions.members.first()
+
+      if(!message.mentions.members.first()) return message.reply('لازم تطلب ايد وحدة').catch(console.error);
+      if(message.mentions.users.size > 1) return message.reply('ولد ما يضبط لازم بنت تذكر لازم بنت الحلال').catch(console.error);
+       if(proposed === message.author) return message.reply(`**خنثى ؟ **`);
+        if(proposed === client.user) return message.reply(`** تبي تتزوجني؟ **`);
+              message.channel.send(`**${proposed} 
+ بدك تقبلي عرض الزواج من ${message.author}
+ العرض لمدة 10 ثانية 
+ اكتب موافقة او لا**`)
+
+const filter = m => m.content.startsWith("موافقة");
+message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
+.then(collected =>{ 
+    message.channel.send(`**${message.author} و ${proposed} الف الف مبروك انشاء الله تستمتعون بحياتكم الزوجية ويطول اعماركم ولا تنسون شهر العسل**`);
+})
+   .catch(collected => message.channel.send(`**السكوت علامة الرضا نقول قلللوش مبروك**`))
+
+   const filte = m => m.content.startsWith("لا");
+message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
+.then(collected =>{ 
+   message.channel.send(`**${message.author} تم رفض عرضك**`);
+})
+
+
+
+
+  }
+});
+
 
 client.on("message", function(message) {
    if(message.content.startsWith(prefix + "rps")) {
@@ -973,6 +988,7 @@ client.on("message", message => {
 });
 
 
+
 client.on('voiceStateUpdate', (old, now) => {
   const channel = client.channels.get('471984309797126145');
   const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
@@ -989,6 +1005,7 @@ channel.send(`${member} ولكم يا عمو البوت`)
 }
 })
   
+
   client.on('message', message => {
         var  user = message.mentions.users.first() || message.author;
     if (message.content.startsWith("-avatar")) {
@@ -996,6 +1013,7 @@ message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 }
 });
   
+
   client.on("message", message => {
 
             if (message.content.startsWith(prefix + "bc")) {
