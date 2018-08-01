@@ -890,10 +890,6 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 .then(collected =>{ 
    message.channel.send(`**${message.author} تم رفض عرضك**`);
 })
-
-
-
-
   }
 });
 
@@ -1041,4 +1037,4 @@ message.guild.unban(ns);
 
   
    
-client.login(process.env.BOT_TOKEN);}
+client.login(process.env.BOT_TOKEN);
