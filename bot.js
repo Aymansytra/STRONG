@@ -994,16 +994,7 @@ message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 };     
 });
   
-  
- client.on('message',async message => {
-if(message.content === 'unbanall') {
-message.guild.fetchBans().then(ba => {
-ba.forEach(ns => {
-message.guild.unban(ns);
-});
-});
-}
-
+ 
 
   
    
