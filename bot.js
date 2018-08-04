@@ -206,4 +206,15 @@ u.guild.members.get(ss.executor.id).roles.forEach(r => {
     fs.writeFile("./data.json", JSON.stringify(data) ,(err) =>{
         if (err) console.log(err.message);
     });
+  
+  //فويس اونلاين
+
+client.on('voiceStateUpdate', (old, now) => {
+  const channel = client.channels.get('475270010504478721');
+  const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
+  const size = channel.name.match(/\[\s(\d+)\s\]/);
+  if (!size) return channel.setName(`Voice Online: ${currentSize}`);
+  if (currentSize !== size) channel.setName(`Voice Online: ${currentSize}`);
+});
+  
 client.login(process.env.BOT_TOKEN);
