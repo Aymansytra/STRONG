@@ -83,14 +83,11 @@ client.user.setGame(`3oooo 👻`,"http://twitch.tv/sytra_ayman")
                                     ctx.fillText(`You are the member No: ${member.guild.memberCount} `
                               , 200, 190);
  
- welcomer.sendFile(canvas.toBuffer())
+welcomer.sendFile(canvas.toBuffer())
  
  
  
       })
       })
       });
-}); 
-
-  });
 client.login(process.env.BOT_TOKEN);
