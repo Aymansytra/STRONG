@@ -6,6 +6,23 @@ const fs = require("fs");// npm i fs
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`E7m E7m`,"http://twitch.tv/sytra_ayman")
+  
+         client.on("guildMemberAdd", member => {
+    var moment = require("moment");
+ 
+                    let modlog2 = client.channels.find('name', 'chat');
+ 
+         moment.locale('ar-ly');
+         var h = member.user;
+        let heroo = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(h.avatarURL)
+        .setAuthor(h.username,h.avatarURL)
+        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+         .addField(': تاريخ دخولك السيرفر',`${moment(member.joinedAt).format('D/M/YYYY h:mm a ')} \n\`\`${moment(member.joinedAt).startOf(' ').fromNow()}\`\``, true)      
+         .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
+     modlog2.send({embed:heroo}); 
+});
  
       client.on('guildMemberAdd', member => {
       const welcomer =  member.guild.channels.find('name', 'chat');//اسم الروم الي يرحب فيه
@@ -19,7 +36,6 @@ client.user.setGame(`E7m E7m`,"http://twitch.tv/sytra_ayman")
       './img/w4.png',
       './img/w5.png',
       './img/w6.png',
-      './img/w8.png',
       './img/w7.png'];
  
               let Image = Canvas.Image,
