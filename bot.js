@@ -206,35 +206,4 @@ u.guild.members.get(ss.executor.id).roles.forEach(r => {
     fs.writeFile("./data.json", JSON.stringify(data) ,(err) =>{
         if (err) console.log(err.message);
     });
-
-  //ميوت صوتي
-  
-  client.on('message', message => {
-  if (message.content.startsWith(prefix + "deafen")) {
-    if (!message.member.hasPermission('DEAFEN_MEMBERS')) return;
-  { message.member.setDeaf(true);
-    }
-  }
-    });
-client.on('message', message => {
-  if (message.content.startsWith(prefix + "vmute")) {
-    if (!message.member.hasPermission('MUTE_MEMBERS')) return;
-  { message.member.setMute(true);
-    }
-  }
-    });
-client.on('message', message => {
-  if (message.content.startsWith(prefix + "undeafen")) {
-    if (!message.member.hasPermission('DEAFEN_MEMBERS')) return;
-  { message.member.setDeaf(false);
-    }
-  }
-    });
-client.on('message', message => {
-  if (message.content.startsWith(prefix + "vunmute")) {
-    if (!message.member.hasPermission('MUTE_MEMBERS')) return;
-  { message.member.setMute(false);
-    }
-  }
-    });
 client.login(process.env.BOT_TOKEN);
