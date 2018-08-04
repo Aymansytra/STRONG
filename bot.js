@@ -63,7 +63,7 @@ client.user.setGame(`E7m E7m`,"http://twitch.tv/sytra_ayman")
                               ctx.fontSize = '28px';
                               ctx.fillStyle = "#FFFFFF";
                               ctx.textAlign = "center";
-                                    ctx.fillText(`انت العضو رقم${member.guild.memberCount} `
+                                    ctx.fillText(`YOU ARE THE ${member.guild.memberCount} `
                               , 200, 190);
  
  welcomer.sendFile(canvas.toBuffer())
