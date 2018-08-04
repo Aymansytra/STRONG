@@ -18,8 +18,8 @@ client.user.setGame(`E7m E7m`,"http://twitch.tv/sytra_ayman")
       './img/w3.png',
       './img/w4.png',
       './img/w5.png',
-      './img/w7.png',
-      './img/w8.png'];
+      './img/w6.png',
+      './img/w7.png'];
  
               let Image = Canvas.Image,
                   canvas = new Canvas(401, 202),
