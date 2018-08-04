@@ -73,5 +73,5 @@ client.user.setGame(`E7m E7m`,"http://twitch.tv/sytra_ayman")
       })
       })
       });
-	  
+}); 
 client.login(process.env.BOT_TOKEN);
