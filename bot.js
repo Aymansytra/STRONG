@@ -93,7 +93,7 @@ welcomer.sendFile(canvas.toBuffer())
   });
 
 client.on("guildMemberAdd", (member) => {
-let channel = member.guild.channels.get("471861902084145165");
+let channel = member.guild.channels.get("475233806677442560");
 if (!channel) {
 console.log("!the channel id it's not correct");
 return;
