@@ -32,7 +32,7 @@ client.user.setGame(`3oooo 👻`,"http://twitch.tv/sytra_ayman")
     .setDescription(`الى اللقاء...`)
     .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('RANDOM')
-    .setFooter(`The King Bot`, '')
+    .setFooter(`SyTrAAA`, '')
 
 var channel =member.guild.channels.find('name', 'chat')
 if (!channel) return;
