@@ -122,7 +122,7 @@ data.forEach((Invite, key, map) => {
 var Inv = Invite.code;
 if (dat[Inv])
 if (dat[Inv] < Invite.uses) {
-client.guild.channels.get('ايدي الروم').send(`welcome To ${member.guild.name}\nتم دعوته بواسطة  ${Invite.inviter} `) ;       
+client.guild.channels.get('475233806677442560').send(`welcome To ${member.guild.name}\nتم دعوته بواسطة  ${Invite.inviter} `) ;       
 }
 dat[Inv] = Invite.uses;
 });
