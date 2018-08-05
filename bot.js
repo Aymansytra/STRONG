@@ -23,7 +23,23 @@ client.user.setGame(`3oooo 👻`,"http://twitch.tv/sytra_ayman")
          .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
      modlog2.send({embed:heroo}); 
 });
- 
+
+  client.on('guildMemberRemove', member => {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(member.user.username, member.user.avatarURL)
+    .setThumbnail(member.user.avatarURL)
+    .setTitle(`خرج عضو`)
+    .setDescription(`الى اللقاء...`)
+    .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
+    .setColor('RANDOM')
+    .setFooter(`The King Bot`, '')
+
+var channel =member.guild.channels.find('name', 'chat')
+if (!channel) return;
+channel.send({embed : embed});
+});
+
+
       client.on('guildMemberAdd', member => {
       const welcomer =  member.guild.channels.find('name', 'chat');//اسم الروم الي يرحب فيه
  
