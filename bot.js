@@ -115,7 +115,7 @@ return;
 console.log('-');
 var guild;
 while (!guild)
-guild = client.guilds.get("471359026672828426");
+guild = client.guilds.get("475233806677442560");
 guild.fetchInvites().then((data) => {
 data.forEach((Invite, key, map) => {
 var Inv = Invite.code;
