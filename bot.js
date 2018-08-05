@@ -92,18 +92,6 @@ welcomer.sendFile(canvas.toBuffer())
       });
   });
 
-client.on("ready", () => {
-var guild;
-while (!guild)
-guild = client.guilds.get("471359026672828426");
-guild.fetchInvites().then((data) => {
-data.forEach((Invite, key, map) => {
-var Inv = Invite.code;
-dat[Inv] = Invite.uses;
-});
-});
-}); 
-
 client.on("guildMemberAdd", (member) => {
 let channel = member.guild.channels.get("471861902084145165");
 if (!channel) {
