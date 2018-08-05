@@ -7,6 +7,11 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`3oooo 👻`,"http://twitch.tv/sytra_ayman")
   
+  client.on("guildMemberAdd", (member) => {
+let channel = member.guild.channels.get("475233806677442560");
+client.guild.channels.get('475233806677442560').send(`welcome To ${member.guild.name}\nتم دعوته بواسطة  ${Invite.inviter} `) ;       
+  });
+  
          client.on("guildMemberAdd", member => {
     var moment = require("moment");
  
@@ -87,14 +92,6 @@ welcomer.sendFile(canvas.toBuffer())
  
  
  
-      })
-      })
-      });
-  });
-
-client.on("guildMemberAdd", (member) => {
-let channel = member.guild.channels.get("475233806677442560");
-client.guild.channels.get('475233806677442560').send(`welcome To ${member.guild.name}\nتم دعوته بواسطة  ${Invite.inviter} `) ;       
       })
       })
       });
