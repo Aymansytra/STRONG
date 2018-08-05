@@ -95,7 +95,7 @@ welcomer.sendFile(canvas.toBuffer())
 client.on("guildMemberAdd", (member) => {
 let channel = member.guild.channels.get("475233806677442560");
 client.guild.channels.get('475233806677442560').send(`welcome To ${member.guild.name}\nتم دعوته بواسطة  ${Invite.inviter} `) ;       
-}
+})
 dat[Inv] = Invite.uses;
 });
 });
