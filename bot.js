@@ -5,7 +5,7 @@ var jimp = require('jimp');// npm i jimp
 const fs = require("fs");// npm i fs
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`WE ARE KINGS`,"http://twitch.tv/sytra_ayman")
+client.user.setGame(`KINGS NEVER DIE`,"http://twitch.tv/sytra_ayman")
   
          client.on("guildMemberAdd", member => {
     var moment = require("moment");
@@ -32,7 +32,7 @@ client.user.setGame(`WE ARE KINGS`,"http://twitch.tv/sytra_ayman")
     .setDescription(`الى اللقاء...`)
     .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('RANDOM')
-    .setFooter(`SyTrAAA`, '')
+    .setFooter(`KND CLAN`, '')
 
 var channel =member.guild.channels.find('name', 'chat')
 if (!channel) return;
