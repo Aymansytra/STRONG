@@ -5,7 +5,7 @@ var jimp = require('jimp');// npm i jimp
 const fs = require("fs");// npm i fs
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`KINGS NEVER DIE`,"http://twitch.tv/sytra_ayman")
+client.user.setGame(`KINGS NEVER DIE .`,"http://twitch.tv/sytra_ayman")
   
          client.on("guildMemberAdd", member => {
     var moment = require("moment");
