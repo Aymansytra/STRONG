@@ -75,8 +75,7 @@ channel.send({embed : embed});
       var jimp = require('jimp')
  
       const w = ['./img/w1.png',
-      './img/w5.png',
-      './img/w7.png'];
+      './img/w5.png'];
  
               let Image = Canvas.Image,
                   canvas = new Canvas(401, 202),
