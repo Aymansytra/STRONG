@@ -134,7 +134,7 @@ welcomer.sendFile(canvas.toBuffer())
 
 
 client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.get("ايدي الروووووم");
+    let channel = member.guild.channels.get("478441834738352138");
     if (!channel) {
         console.log("!the channel id it's not correct");
         return;
@@ -145,7 +145,7 @@ client.on("guildMemberAdd", (member) => {
     console.log('-');
     var guild;
     while (!guild)
-        guild = client.guilds.get("ايدي سيررفرك");
+        guild = client.guilds.get("478372205127008258");
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
