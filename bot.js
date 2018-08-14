@@ -133,6 +133,7 @@ welcomer.sendFile(canvas.toBuffer())
 
 
 
+const dat = JSON.parse("{}");
 client.on("guildMemberAdd", (member) => {
     let channel = member.guild.channels.get("478441834738352138");
     if (!channel) {
