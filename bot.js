@@ -132,6 +132,7 @@ welcomer.sendFile(canvas.toBuffer())
   });
 
 client.on('message', MEGA => { 
+  var prefix = "+";
   var sender = MEGA.author
   if(!MEGA.guild) return
   if(!sw[MEGA.guild.id]) sw[MEGA.guild.id] = {
