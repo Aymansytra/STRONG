@@ -148,8 +148,7 @@ client.on('guildMemberAdd', member => {
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
     const yumz = member.guild.channels.find("name", "chat");
-     yumz.send(`<@${member.user.id}> joined by <@${inviter.id}>`);
-   //  yumz.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
+     yumz.send(`joined by <@${inviter.id}>`);
   }); 
 });
 client.login(process.env.BOT_TOKEN);
